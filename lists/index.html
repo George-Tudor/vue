@@ -9,14 +9,35 @@
 <body>
 <div id="app">
     <ul>
-        <li v-for="color in colors">{{ color }}</li>
+        <li v-for="color in colors" v-if="color.primary">{{ color.text }}</li>
     </ul>
 </div>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
-            colors: ['red', 'green', 'blue', 'yellow', 'orange']
+            colors: [
+                {
+                    text: 'red',
+                    primary: true
+                },
+                {
+                    text: 'green',
+                    primary: false
+                },
+                {
+                    text: 'blue',
+                    primary: true
+                },
+                {
+                    text: 'yellow',
+                    primary: true
+                },
+                {
+                    text: 'orange',
+                    primary: false
+                }
+                ]
         }
     })
 </script>
