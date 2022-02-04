@@ -21,16 +21,34 @@
                     <textarea class="form-control" v-model="note.text"></textarea>
                 </div>
             </div>
+            <button class="btn btn-primary" @click="addNote">Submit</button>
         </div>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-              title: 'Notemaster',
+                title: 'Notemaster',
                 note: {
                     title: '',
                     text: ''
+                },
+                notes: [
+                    {
+                        title: 'Completed Vue Course',
+                        text: 'Learn Vue has been fun, and interesting.  I\'m looking forward to using it more!',
+                        date: new Date(Date.now()).toLocaleString()
+                    }
+                ]
+            },
+            methods: {
+                addNote(){
+                    let { text, title } = this.note;
+                    this.notes.push({
+                        text,
+                        title,
+                        date: new Date(Date.now()).toLocaleString()
+                    })
                 }
             }
         })
