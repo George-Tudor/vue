@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <h3>{{ title }}</h3>
-    <button class="btn btn-primary" @click="fetchCharacter">Test Fetch Character</button>
+    <Character />
   </div>
 </template>
 
 <script>
+import Character from "./components/Character";
 export default {
   name: "App",
   data() {
@@ -14,12 +15,8 @@ export default {
       results: []
     };
   },
-  methods: {
-    fetchCharacter() {
-      fetch('https://swapi.dev/api/people/1')
-        .then(res => res.json())
-        .then(res => console.log(res))
-      }
+  components: {
+    Character
     }
   }
 
