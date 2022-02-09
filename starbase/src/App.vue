@@ -10,21 +10,24 @@ export default {
   name: "App",
   data() {
     return {
-      title: 'Generate Your Team'
-    }
+      title: 'Generate Your Team',
+      swapiPeople: null
+    };
   },
   methods: {
     fetchCharacter() {
-      fetch('http://swapi.co/api/people', {
+      fetch('https://swapi.dev/api/people', {
         mode: 'no-cors',
-        method: 'GET'
+        method: 'GET',
+        body: JSON.stringify(data)
       })
       .then(response => response.json())
-      .then(json => console.log(json))
-      // .catch(console.log('Failed'))
+      .then(function (response) {
+        console.log(response)
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped>
