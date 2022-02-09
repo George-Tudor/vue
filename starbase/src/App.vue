@@ -11,23 +11,18 @@ export default {
   data() {
     return {
       title: 'Generate Your Team',
-      swapiPeople: null
+      results: []
     };
   },
   methods: {
     fetchCharacter() {
-      fetch('https://swapi.dev/api/people', {
-        mode: 'no-cors',
-        method: 'GET',
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(function (response) {
-        console.log(response)
-      });
+      fetch('https://swapi.dev/api/people/1')
+        .then(res => res.json())
+        .then(res => console.log(res))
+      }
     }
   }
-};
+
 </script>
 
 <style scoped>
