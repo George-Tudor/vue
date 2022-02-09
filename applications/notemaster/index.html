@@ -24,8 +24,8 @@
             <button class="btn btn-primary" @click="addNote">Submit</button>
         </div>
         <div class="col-sm-12">
-            <div class="col-sm-4 note" v-for="(note, index) in notes">
-                <div class="card" v-bind:style="{ 'background-color': color }">
+            <div class="col-sm-4 note" v-for="(note) in notes">
+                <div class="card" v-bind:style="{ 'background-color': 'colors[2]'}">
                     <a href="#" class="close" @click="removeNote(index)">&times;</a>
                     <a href="#" class="color" @click="changeColor(index)">&#9744;</a>
                     <div class="card-block">
@@ -50,6 +50,12 @@
                     {
                         title: 'Completed Vue Course',
                         text: 'Learn Vue has been fun, and interesting.  I\'m looking forward to using it more!',
+                        date: new Date(Date.now()).toLocaleString(),
+                        colors: ['red', 'blue', 'green', 'yellow']
+                    },
+                    {
+                        title: 'Pick up groceries',
+                        text: 'Milk, eggs, honey, bread',
                         date: new Date(Date.now()).toLocaleString(),
                         colors: ['red', 'blue', 'green', 'yellow']
                     }
