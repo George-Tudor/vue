@@ -5,7 +5,8 @@ var app = new Vue({
         image: 'https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg',
         infoLink: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
         description: 'A pair of warm, fuzzy socks',
-        inventory: 0
+        inStock: true,
+        onSale: true
     }
 
 });
