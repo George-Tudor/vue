@@ -1,3 +1,14 @@
+Vue.component('product-review', {
+    template: `
+        <input v-model="name" >
+    `,
+    data() {
+        return {
+            name: null
+        }
+    }
+})
+
 Vue.component('product-details', {
     props: {
         details: {
@@ -53,10 +64,9 @@ Vue.component('product', {
 
                 <button @click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock }">Add to Cart</button>
                 <button @click="decreaseCart" :disabled="!inStock" :class="{ disabledButton: !inStock}">Decrease Qty</button>
-                
-
-
             </div>
+            
+            <product-review></product-review>
 
         </div>
     `,
